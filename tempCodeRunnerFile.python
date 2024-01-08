@@ -1,0 +1,24 @@
+def candy_store(candy_prices, budget):
+    """Finds the maximum number of candies that a customer can purchase with a given budget.
+
+    Args:
+        candy_prices: A list of candy prices in the order they are arranged on the shelves.
+        budget: The customer's budget.
+
+    Returns:
+        The maximum number of candies the customer can purchase.
+    """
+
+    max_candies = 0
+    current_budget = budget
+
+    for candy_price in candy_prices:
+        if current_budget >= candy_price:
+            max_candies += 1
+            current_budget -= candy_price
+        else:
+            break
+
+    return max_candies
+
+
